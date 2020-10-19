@@ -9,10 +9,10 @@ public class JoinApp {
             System.exit(-1);
         }
         JobConf conf = new JobConf(JoinApp.class);
-        conf.setJobName("map join");
+        conf.setJobName("JoinApp");
         FileOutputFormat.setOutputPath(conf, new Path(args[2]));
         MultipleInputs.addInputPath(conf, args[0], TextInputFormat.class, FlightMapper.class);
-        MultipleInputs.addInputPath(conf, args[1], TextInputFormat.class, AirPortMapper.class);
+        MultipleInputs.addInputPath(conf, args[1], TextInputFormat.class, AirportMapper.class);
         conf.setMapperClass(FlightMapper.class);
         conf.setOutputKeyClass(Text.class);
         JobClient.runJob(conf);
