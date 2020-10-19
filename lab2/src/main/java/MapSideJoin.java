@@ -1,8 +1,8 @@
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapred.FileOutputFormat;
-import org.apache.hadoop.mapred.JobClient;
-import org.apache.hadoop.mapred.JobConf;
+import org.apache.hadoop.mapred.*;
+
+import java.util.List;
 
 public class MapSideJoin {
     public static void main (String[] args) throws Exception{
@@ -12,6 +12,8 @@ public class MapSideJoin {
         JobConf conf = new JobConf(MapSideJoin.class);
         conf.setJobName("map join");
         FileOutputFormat.setOutputPath(conf, new Path(args[2]));
+        TextInputFormat inputFormat = new TextInputFormat();
+        InputSplit[] splits = inputFormat.getSplits(conf);
         conf.setMapperClass(MapJoinMapper.class);
         conf.setOutputKeyClass(Text.class);
         JobClient.runJob(conf);
