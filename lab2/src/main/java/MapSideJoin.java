@@ -14,7 +14,6 @@ public class MapSideJoin {
         FileOutputFormat.setOutputPath(conf, new Path(args[2]));
         conf.setMapperClass(MapJoinMapper.class);
         conf.setOutputKeyClass(Text.class);
-        conf.setOutputValueClass(Text.class);
         JobClient.runJob(conf);
     }
 }
