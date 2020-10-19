@@ -3,6 +3,6 @@ public class MapSideJoin {
         if (args.length != 2) {
             System.exit(-1);
         }
-        
+        Job
     }
 }
