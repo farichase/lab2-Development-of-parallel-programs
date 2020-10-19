@@ -12,7 +12,7 @@ public class JoinApp {
         conf.setJobName("map join");
         FileOutputFormat.setOutputPath(conf, new Path(args[2]));
         MultipleInputs.addInputPath(conf, args[0], TextInputFormat.class, FlightMapper.class);
-        MultipleInputs.addInputPath(conf, args[1], TextInputFormat.class, FlightMapper.class);
+        MultipleInputs.addInputPath(conf, args[1], TextInputFormat.class, AirPortMapper.class);
         conf.setMapperClass(FlightMapper.class);
         conf.setOutputKeyClass(Text.class);
         JobClient.runJob(conf);
