@@ -1,3 +1,4 @@
+import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.mapred.FileOutputFormat;
 import org.apache.hadoop.mapred.JobConf;
 
@@ -8,6 +9,7 @@ public class MapSideJoin {
         }
         JobConf conf = new JobConf(JoinJob.class);
         conf.setJobName("map join");
-        FileOutputFormat
+        FileOutputFormat.setOutputPath(conf, new Path(args[2]));
+        conf.serMapperClass(MapJoinMapper.class);
     }
 }
