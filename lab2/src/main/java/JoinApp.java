@@ -11,7 +11,8 @@ public class JoinApp {
         JobConf conf = new JobConf(JoinApp.class);
         conf.setJobName("map join");
         FileOutputFormat.setOutputPath(conf, new Path(args[2]));
-        MultipleInputs(conf);
+        MultipleInputs.addInputPath(conf, args[0], TextInputFormat.class, MapJoinMapper.class);
+
         conf.setMapperClass(MapJoinMapper.class);
         conf.setOutputKeyClass(Text.class);
         JobClient.runJob(conf);
