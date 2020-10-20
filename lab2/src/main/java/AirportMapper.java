@@ -1,6 +1,7 @@
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
+import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
@@ -17,7 +18,7 @@ public class AirportMapper extends Mapper<LongWritable, Text, Text, IntWritable>
                 delay = Float.parseFloat(line[ARR_DELAY]);
             }
             if (delay > 0) {
-                context.write(new Writable(), new Text(line[ARR_DELAY]));
+                context.write(new AirportWritableComparable(), new Text(line[ARR_DELAY]));
             }
         }
     }
