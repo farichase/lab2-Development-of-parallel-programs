@@ -19,8 +19,8 @@ public class AirportMapper extends Mapper<LongWritable, Text, Text, IntWritable>
             }
             if (delay > 0) {
                 context.write(
-                        AirportWritableComparable(Integer.parseInt(line[AEROPORT_ID]), 1),
-                        Text(line[ARR_DELAY]));
+                        new AirportWritableComparable(Integer.parseInt(line[AEROPORT_ID]), 1),
+                        new Text(line[ARR_DELAY]));
             }
         }
     }
