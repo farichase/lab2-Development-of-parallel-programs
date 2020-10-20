@@ -11,8 +11,9 @@ public class AirportWritableComparable implements WritableComparable<AirportWrit
         this.indicator = indicator;
     }
     @Override
-    public void write(DataOutput data) {
-
+    public void write(DataOutput data) throws  {
+        data.writeInt(aeroport_id);
+        data.writeInt(indicator);
     }
     @Override
     public void readFields(DataInput data){
