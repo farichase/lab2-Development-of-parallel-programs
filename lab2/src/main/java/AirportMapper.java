@@ -20,7 +20,7 @@ public class AirportMapper extends Mapper<LongWritable, Text, Text, IntWritable>
                 int airport_id = Integer.parseInt(line[AIRPORT_ID]);
                 context.write(
                         new AirportWritableComparable(airport_id, 1),
-                        new Text(line[AIRPORT_DELAY])
+                        new Text(delay.toString())
                 );
             }
         }
