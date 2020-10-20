@@ -1,3 +1,4 @@
+import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapred.*;
@@ -9,7 +10,7 @@ public class JoinApp {
         if (args.length != 3) {
             System.exit(-1);
         }
-        Configuration conf = 
+        Configuration conf = new Configuration();
         Job job = new Job();
         job.setJobName("JoinApp");
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, FlightMapper.class);
