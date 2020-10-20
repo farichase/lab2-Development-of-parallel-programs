@@ -9,7 +9,7 @@ public class AirportMapper extends Mapper<LongWritable, Text, Text, IntWritable>
     private static int AIRPORT_ID = 14;
     private static int AIRPORT_DELAY = 18;
     @Override
-    protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
+    protected void map(LongWritable key, Text value, Mapper.context context) throws IOException, InterruptedException {
         String[] line = value.toString().split(",");
         if (key.get() > 0){
             float delay = 0.f;
