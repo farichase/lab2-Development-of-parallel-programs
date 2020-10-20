@@ -17,7 +17,7 @@ public class AirportWritableComparable implements WritableComparable<AirportWrit
 
     }
     @Override
-    public void compareTo(){
+    public int compareTo(AirportWritableComparable item){
 
     }
 }
