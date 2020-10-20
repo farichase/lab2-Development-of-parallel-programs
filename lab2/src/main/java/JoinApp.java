@@ -9,6 +9,7 @@ public class JoinApp {
         if (args.length != 3) {
             System.exit(-1);
         }
+        Configuration conf = 
         Job job = new Job();
         job.setJobName("JoinApp");
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, FlightMapper.class);
