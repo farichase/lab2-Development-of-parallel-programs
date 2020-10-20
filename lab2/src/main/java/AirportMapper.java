@@ -7,10 +7,11 @@ import java.io.IOException;
 
 public class AirportMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
     @Override
+    private int AEROPORT_ID;
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String[] lines = value.toString().split(",");
         if (key.get() > 0){
-            
+
         }
     }
 }
