@@ -1,5 +1,23 @@
 import org.apache.hadoop.io.WritableComparable;
 
-public class AirportWritableComparable implements WritableComparable<AirportWritableComparable> {
+import java.io.DataInput;
+import java.io.DataOutput;
 
+public class AirportWritableComparable implements WritableComparable<AirportWritableComparable> {
+    private int aeroport_id;
+    public AirportWritableComparable(){
+
+    }
+    @Override
+    public void write(DataOutput data) {
+
+    }
+    @Override
+    public void readFields(DataInput data){
+
+    }
+    @Override
+    public void compareTo(){
+
+    }
 }
