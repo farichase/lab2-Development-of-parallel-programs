@@ -14,7 +14,7 @@ public class AirportMapper extends Mapper<LongWritable, Text, Text, IntWritable>
         if (key.get() > 0){
             int delay = Integer.parseInt(line[ARR_DELAY]);
             if (delay > 0) {
-                context.write(new Text(), new IntWritable());
+                //context.write(new , new Text(line[ARR_DELAY]));
             }
         }
     }

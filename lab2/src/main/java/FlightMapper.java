@@ -8,6 +8,6 @@ import java.io.IOException;
 public class FlightMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        String[] lines = value.toString().split(",");
+        String[] line = value.toString().split(",");
     }
 }
