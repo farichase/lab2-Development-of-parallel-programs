@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class AirportsMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
     @Override
-    protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
+    protected void map(LongWritable key, Text value, Mapper.Context context) throws IOException, InterruptedException {
         String[] line = value.toString().split(",");
         if (key.get() > 0){
             String airport_name = "";
