@@ -4,10 +4,10 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-public class AirportWritableComparable implements WritableComparable<AirportWritableComparable> {
+public class FlightsWritableComparable implements WritableComparable<FlightsWritableComparable> {
     private int aeroport_id;
     private int indicator;
-    public AirportWritableComparable(int aeroport_id, int indicator){
+    public FlightsWritableComparable(int aeroport_id, int indicator){
         this.aeroport_id = aeroport_id;
         this.indicator = indicator;
     }
@@ -22,7 +22,7 @@ public class AirportWritableComparable implements WritableComparable<AirportWrit
         indicator = data.readInt();
     }
     @Override
-    public int compareTo(AirportWritableComparable item){
+    public int compareTo(FlightsWritableComparable item){
         return 0;
     }
 }
