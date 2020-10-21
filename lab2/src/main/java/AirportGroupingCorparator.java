@@ -3,7 +3,7 @@ import org.apache.hadoop.io.WritableComparator;
 
 public class AirportGroupingCorparator extends WritableComparator {
     public AirportGroupingCorparator() {
-        super(FlightsWritableComparable.class, true);
+        super(FlightsWritableComparable.class, false);
     }
     @Override
     public int compare(WritableComparable a, WritableComparable b){
