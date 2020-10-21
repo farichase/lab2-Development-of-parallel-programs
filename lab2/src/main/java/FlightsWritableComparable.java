@@ -18,8 +18,20 @@ public class FlightsWritableComparable implements WritableComparable<FlightsWrit
     }
     @Override
     public void readFields(DataInput data) throws IOException{
-        aeroport_id = data.readInt();
-        indicator = data.readInt();
+        this.aeroport_id = data.readInt();
+        this.indicator = data.readInt();
+    }
+    public void setAeroport_id(int aeroport_id){
+        this.aeroport_id = aeroport_id;
+    }
+    public void setIndicator(int indicator){
+        this.indicator = indicator;
+    }
+    public int getAeroport_id(){
+        return this.aeroport_id;
+    }
+    public int getIndicator(){
+        return this.indicator;
     }
     @Override
     public int compareTo(FlightsWritableComparable item){
