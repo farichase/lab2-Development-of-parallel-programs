@@ -14,7 +14,10 @@ public class AirportsMapper extends Mapper<LongWritable, Text, Text, IntWritable
             for (int i = 1; i < line.length; i++) {
                 airport_name += line[i];
             }
-            context.write();
+            context.write(
+                    new FlightsWritableComparable(Integer.parseInt(line[0]), 0),
+                    new Text(airport_name)
+            );
         }
     }
 }
