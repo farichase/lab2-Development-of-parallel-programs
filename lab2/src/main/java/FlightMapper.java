@@ -10,7 +10,7 @@ public class FlightMapper extends Mapper<LongWritable, Text, Text, IntWritable> 
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String[] line = value.toString().split(",");
         if (key.get() > 0){
-
+            String 
         }
     }
 }
