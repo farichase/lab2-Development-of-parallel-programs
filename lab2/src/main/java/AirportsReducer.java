@@ -6,7 +6,7 @@ import org.apache.hadoop.mapreduce.Reducer;
 
 public class AirportsReducer extends Reducer<Text, IntWritable, Text, LongWritable> {
     @Override
-    protected void reduce(LongWritable key, Text value, Mapper.Context context){
+    protected void reduce(FlightsWritableComparable key, Iterable<Text> value, Context context){
         
     }
 }
