@@ -13,6 +13,6 @@ public class JoinApp {
         Job job = Job.getInstance(conf, "JoinApp");
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, FlightsMapper.class);
         MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, AirportsMapper.class);
-
+        File.
     }
 }
