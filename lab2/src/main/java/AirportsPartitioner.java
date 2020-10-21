@@ -1,3 +1,3 @@
-public class AirportsPartitioner {
-    
+public class AirportsPartitioner extends Partitioner<>{
+
 }
