@@ -21,7 +21,7 @@ public class JoinApp {
         job.setGroupingComparatorClass(AirportGroupingCorparator.class);
         job.setReducerClass(AirportsReducer.class);
         job.setMapOutputKeyClass(FlightsWritableComparable.class);
-        job.setNumReduceTasks(3);
+        job.setNumReduceTasks(2);
         System.exit(job.waitForCompletion(true) ? 0 : 1);
     }
 }
