@@ -16,8 +16,8 @@ public class AirportsReducer extends Reducer<Text, IntWritable, Text, LongWritab
             int quantity = 0;
             float sum = 0;
             while (iter.hasNext()){
-                String delay_str = String.valueOf(iter.next());
-                float delay = Float.parseFloat(delay_str);
+                String delay_min_str = String.valueOf(iter.next());
+                float delay_min = Float.parseFloat(delay_min_str);
                 ++quantity;
                 sum += delay;
             }
