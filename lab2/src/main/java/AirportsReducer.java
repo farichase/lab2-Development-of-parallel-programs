@@ -13,7 +13,7 @@ public class AirportsReducer extends Reducer<Text, IntWritable, Text, LongWritab
         Iterator<Text> iter = values.iterator();
         Text airport_name = iter.next();;
         if (iter.hasNext()) {
-            int quantity_min = 0, quantity_max = 0;
+            int quantity = 0;
             float sum_min = 0, sum_max = 0;
             while (iter.hasNext()){
                 String delay_min_str = String.valueOf(iter.next());
