@@ -11,6 +11,10 @@ public class FlightsWritableComparable implements WritableComparable<FlightsWrit
         this.aeroport_id = aeroport_id;
         this.indicator = indicator;
     }
+    public FlightsWritableComparable(){
+        this.aeroport_id = 0;
+        this.indicator = 0;
+    }
     @Override
     public void write(DataOutput data) throws IOException {
         data.writeInt(aeroport_id);
