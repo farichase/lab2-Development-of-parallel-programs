@@ -1,5 +1,4 @@
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
 
 import java.io.IOException;
@@ -9,7 +8,7 @@ public class AirportsReducer extends Reducer<FlightsWritableComparable, Text, Te
     float MAX = 0.f;
     float MIN = Float.MAX_VALUE;
     @Override
-    protected void reduce(FlightsWritableComparable key, Iterable<Text> values, Mapper.Context context)
+    protected void reduce(FlightsWritableComparable key, Iterable<Text> values, Context context)
             throws IOException, InterruptedException {
         Iterator<Text> iter = values.iterator();
         Text airport_name = iter.next();
