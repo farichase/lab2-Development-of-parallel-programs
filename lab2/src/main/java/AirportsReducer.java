@@ -7,7 +7,7 @@ import org.apache.hadoop.mapreduce.Reducer;
 import java.io.IOException;
 import java.util.Iterator;
 
-public class AirportsReducer extends Reducer<Text, IntWritable, Text, LongWritable> {
+public class AirportsReducer extends Reducer<FlightsWritableComparable, Text, Text, Text> {
     float MAX = 0.f;
     float MIN = Float.MAX_VALUE;
     @Override
