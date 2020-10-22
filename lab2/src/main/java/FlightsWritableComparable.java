@@ -45,7 +45,8 @@ public class FlightsWritableComparable implements WritableComparable<FlightsWrit
             return -1;
         if (indicator > item.getIndicator())
             return 1;
-        else
+        else if (indicator != item.getIndicator())
             return -1;
+        return 0;
     }
 }
