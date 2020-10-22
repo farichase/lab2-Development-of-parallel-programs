@@ -20,6 +20,7 @@ public class JoinApp {
         job.setPartitionerClass(AirportsPartitioner.class);
         job.setGroupingComparatorClass(AirportGroupingCorparator.class);
         job.setReducerClass(AirportsReducer.class);
+        job.setMapOutputKeyClass(FlightsWritableComparable.class);
         System.exit(job.waitForCompletion(true) ? 0 : 1);
     }
 }
