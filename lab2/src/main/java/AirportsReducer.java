@@ -20,7 +20,9 @@ public class AirportsReducer extends Reducer<Text, IntWritable, Text, LongWritab
                 float delay = Float.parseFloat(delay_str);
                 ++quantity;
                 sum += delay;
+                min = Math.\
                 
+
             }
         }
         context.write(new Text(airport_name), new LongWritable());
