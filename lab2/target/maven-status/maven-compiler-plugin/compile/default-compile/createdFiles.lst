@@ -1,7 +1,0 @@
-AirportsPartitioner.class
-FlightsWritableComparable.class
-JoinApp.class
-AirportsMapper.class
-FlightsMapper.class
-AirportsReducer.class
-AirportGroupingCorparator.class
