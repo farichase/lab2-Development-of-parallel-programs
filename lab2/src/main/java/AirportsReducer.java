@@ -13,11 +13,20 @@ public class AirportsReducer extends Reducer<FlightsWritableComparable, Text, Te
         Iterator<Text> iter = values.iterator();
         Text airport_name = iter.next();
         int quantity = 0;
-        float sum = 0, min = MIN, max = MAX;;
+        float sum = 0, min = MIN, max = MAX;
         if (iter.hasNext()) {
+            String delay_str = String.valueOf(iter.next());
+            float delay = Float.parseFloat(delay_str);
+            ++quantity;
+            sum += delay;
+            min = Math.min(min, delay);
+            max = Math.min(max, delay);
             while (iter.hasNext()){
-                String delay_str = String.valueOf(iter.next());
-                float delay = Float.parseFloat(delay_str);
+                sum = 0;
+                min = MIN;
+                max = MAX;
+                delay_str = String.valueOf(iter.next());
+                delay = Float.parseFloat(delay_str);
                 ++quantity;
                 sum += delay;
                 min = Math.min(min, delay);
