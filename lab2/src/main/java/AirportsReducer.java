@@ -14,12 +14,13 @@ public class AirportsReducer extends Reducer<Text, IntWritable, Text, LongWritab
         Text airport_name = iter.next();;
         if (iter.hasNext()) {
             int quantity = 0;
-            float sum_min = 0, sum_max = 0;
+            float sum = 0, min = MIN, max = MAX;
             while (iter.hasNext()){
-                String delay_min_str = String.valueOf(iter.next());
-                float delay_min = Float.parseFloat(delay_min_str);
-                ++quantity_min;
+                String delay_str = String.valueOf(iter.next());
+                float delay = Float.parseFloat(delay_str);
+                ++quantity;
                 sum += delay;
+                
             }
         }
         context.write(new Text(airport_name), new LongWritable());
