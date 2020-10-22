@@ -6,16 +6,16 @@ import org.apache.hadoop.mapreduce.Reducer;
 import java.util.Iterator;
 
 public class AirportsReducer extends Reducer<Text, IntWritable, Text, LongWritable> {
-    int MAX = 0;
-    int MIN = Integer.MAX_VALUE;
+    float MAX = 0.f;
+    float MIN = Float.MAX_VALUE;
     @Override
     protected void reduce(FlightsWritableComparable key, Iterable<Text> values, Context context){
         Iterator<Text> iter = values.iterator();
         Text airport_name = iter.next();
         int quantity = 0;
-        float sum = 0,
+        float sum = 0;
         if (iter.hasNext()) {
-            int min = MIN, max = MAX;
+            float min = MIN, max = MAX;
             while (iter.hasNext()){
                 String delay_str = String.valueOf(iter.next());
                 float delay = Float.parseFloat(delay_str);
