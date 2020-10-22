@@ -17,8 +17,8 @@ public class FlightsWritableComparable implements WritableComparable<FlightsWrit
     }
     @Override
     public void write(DataOutput data) throws IOException {
-        data.writeInt(aeroport_id);
-        data.writeInt(indicator);
+        data.writeInt(this.aeroport_id);
+        data.writeInt(this.indicator);
     }
     @Override
     public void readFields(DataInput data) throws IOException{
