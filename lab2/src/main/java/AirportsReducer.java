@@ -25,6 +25,6 @@ public class AirportsReducer extends Reducer<FlightsWritableComparable, Text, Te
             }
         }
         context.write(airport_name,
-                new Text ("Min delay:" + min + "\n" + "Max delay:" + max + "\n" + "Average delay" + sum / quantity));
+                new Text ("\n" + "Min delay: " + min + "\n" + "Max delay: " + max + "\n" + "Sum: " +  sum + "\n" + "Quantity: "+ quantity));
     }
 }
