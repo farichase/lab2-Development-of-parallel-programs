@@ -9,7 +9,6 @@ public class AirportsReducer extends Reducer<Text, IntWritable, Text, LongWritab
     @Override
     protected void reduce(FlightsWritableComparable key, Iterable<Text> values, Context context){
         Iterator<Text> iter = values.iterator();
-        Text systemInfo = new Text(iter.next());
         while (iter.hasNext()) {
 
         }
