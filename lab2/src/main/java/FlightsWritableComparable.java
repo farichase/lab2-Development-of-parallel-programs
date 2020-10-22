@@ -35,6 +35,7 @@ public class FlightsWritableComparable implements WritableComparable<FlightsWrit
     }
     @Override
     public int compareTo(FlightsWritableComparable item){
-        return 0;
+        if (aeroport_id >= item.getAeroport_id()) return 1;
+        else return -1;
     }
 }
