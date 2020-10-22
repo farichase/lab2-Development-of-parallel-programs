@@ -11,18 +11,18 @@ public class AirportsReducer extends Reducer<Text, IntWritable, Text, LongWritab
     @Override
     protected void reduce(FlightsWritableComparable key, Iterable<Text> values, Context context){
         Iterator<Text> iter = values.iterator();
-        Text airport_name = iter.next();;
+        Text airport_name = iter.next();
+        int quantity = 0;
+        float sum = 0,
         if (iter.hasNext()) {
-            int quantity = 0;
-            float sum = 0, min = MIN, max = MAX;
+            int min = MIN, max = MAX;
             while (iter.hasNext()){
                 String delay_str = String.valueOf(iter.next());
                 float delay = Float.parseFloat(delay_str);
                 ++quantity;
                 sum += delay;
-                min = Math.\
-                
-
+                min = Math.min(min, delay);
+                max = Math.min(max, delay);
             }
         }
         context.write(new Text(airport_name), new LongWritable());
