@@ -12,13 +12,10 @@ public class AirportsReducer extends Reducer<FlightsWritableComparable, Text, Te
             throws IOException, InterruptedException {
         Iterator<Text> iter = values.iterator();
         Text airport_name = new Text(iter.next().toString());
-        int quantity = 0;
-        float sum = 0, min = MIN, max = MAX;
+
         if (iter.hasNext()) {
-            quantity = 0;
-            sum = 0;
-            min = MIN;
-            max = MAX;
+            int quantity = 0;
+            float sum = 0, min = MIN, max = MAX;
             while (iter.hasNext()){
                 String delay_str = String.valueOf(iter.next());
                 float delay = Float.parseFloat(delay_str);
