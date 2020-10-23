@@ -11,8 +11,7 @@ public class AirportsReducer extends Reducer<FlightsWritableComparable, Text, Te
     protected void reduce(FlightsWritableComparable key, Iterable<Text> values, Context context)
             throws IOException, InterruptedException {
         Iterator<Text> iter = values.iterator();
-        Text airport_name = new Text(iter.next());
-        System.out.println(airport_name);
+        Text airport_name = iter.next();
         if (iter.hasNext()) {
             int quantity = 0;
             float sum = 0, min = MIN, max = MAX;
@@ -31,7 +30,7 @@ public class AirportsReducer extends Reducer<FlightsWritableComparable, Text, Te
                 max = Math.min(max, delay);
             }
             System.out.println(airport_name);
-            context.write(airport_name,
+            context.write(new Text(airport_name),
                     new Text ("\n" + "Min delay: " + min + "\n" + "Max delay: " + max + "\n" + "Average delay : " +  sum / quantity + "\n"));
         }
     }
