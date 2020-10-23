@@ -19,7 +19,7 @@ public class AirportsReducer extends Reducer<FlightsWritableComparable, Text, Te
             sum = 0;
             min = MIN;
             max = MAX;
-            while (iter.hasNext()) {
+            while (iter.hasNext()){
                 String delay_str = String.valueOf(iter.next());
                 float delay = Float.parseFloat(delay_str);
                 ++quantity;
@@ -27,12 +27,11 @@ public class AirportsReducer extends Reducer<FlightsWritableComparable, Text, Te
                 min = Math.min(min, delay);
                 max = Math.min(max, delay);
             }
-        }
             //System.out.println(airport_name);
             context.write(airport_name,
                     new Text ("\n" + "Min delay: " + min +
                             "\n" + "Max delay: " + max +
                             "\n" + "Average delay : " +  sum / quantity + "\n"));
-
+        }
     }
 }
