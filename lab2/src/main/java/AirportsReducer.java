@@ -17,7 +17,6 @@ public class AirportsReducer extends Reducer<FlightsWritableComparable, Text, Te
             float sum = 0, min = MIN, max = MAX;
             String delay_str = String.valueOf(iter.next());
             float delay = Float.parseFloat(delay_str);
-            System.out.println(delay);
             ++quantity;
             sum += delay;
             min = Math.min(min, delay);
