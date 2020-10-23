@@ -12,13 +12,9 @@ public class AirportsReducer extends Reducer<FlightsWritableComparable, Text, Te
             throws IOException, InterruptedException {
         Iterator<Text> iter = values.iterator();
         Text airport_name = iter.next();
-        float sum = 0, min = MIN, max = MAX;
-        int quantity = 0;
         if (iter.hasNext()) {
-            quantity = 0;
-            sum = 0;
-            min = MIN;
-            max = MAX;
+            int quantity = 0;
+            float sum = 0, min = MIN, max = MAX;
             String delay_str = String.valueOf(iter.next());
             float delay = Float.parseFloat(delay_str);
             ++quantity;
@@ -33,8 +29,9 @@ public class AirportsReducer extends Reducer<FlightsWritableComparable, Text, Te
                 min = Math.min(min, delay);
                 max = Math.min(max, delay);
             }
+            System.out.println(airport_name);
+            context.write(airport_name,
+                    new Text ("\n" + "Min delay: " + min + "\n" + "Max delay: " + max + "\n" + "Average delay : " +  sum / quantity + "\n"));
         }
-        context.write(airport_name,
-                new Text ("\n" + "Min delay: " + min + "\n" + "Max delay: " + max + "\n" + "Average delay : " +  sum / quantity + "\n"));
     }
 }
