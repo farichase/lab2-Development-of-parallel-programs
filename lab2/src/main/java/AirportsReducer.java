@@ -11,7 +11,7 @@ public class AirportsReducer extends Reducer<FlightsWritableComparable, Text, Te
     protected void reduce(FlightsWritableComparable key, Iterable<Text> values, Context context)
             throws IOException, InterruptedException {
         Iterator<Text> iter = values.iterator();
-        Text airport_name = iter.next();
+        Text airport_name = new Text(iter.next());
         if (iter.hasNext()) {
             int quantity = 0;
             float sum = 0, min = MIN, max = MAX;
