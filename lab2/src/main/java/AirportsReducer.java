@@ -12,6 +12,7 @@ public class AirportsReducer extends Reducer<FlightsWritableComparable, Text, Te
             throws IOException, InterruptedException {
         Iterator<Text> iter = values.iterator();
         Text airport_name = new Text(iter.next());
+        System.out.println(airport_name);
         if (iter.hasNext()) {
             int quantity = 0;
             float sum = 0, min = MIN, max = MAX;
