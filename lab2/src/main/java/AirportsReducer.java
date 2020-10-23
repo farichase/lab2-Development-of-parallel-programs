@@ -22,9 +22,6 @@ public class AirportsReducer extends Reducer<FlightsWritableComparable, Text, Te
             min = Math.min(min, delay);
             max = Math.min(max, delay);
             while (iter.hasNext()){
-                sum = 0;
-                min = MIN;
-                max = MAX;
                 delay_str = String.valueOf(iter.next());
                 delay = Float.parseFloat(delay_str);
                 ++quantity;
