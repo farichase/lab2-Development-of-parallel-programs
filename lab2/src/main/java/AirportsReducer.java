@@ -14,7 +14,6 @@ public class AirportsReducer extends Reducer<FlightsWritableComparable, Text, Te
         Text airport_name = new Text(iter.next().toString());
         System.out.println(airport_name);
         if (iter.hasNext()) {
-            System.out.println(airport_name);
             int quantity = 0;
             float sum = 0, min = MIN, max = MAX;
             while (iter.hasNext()){
