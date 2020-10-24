@@ -12,7 +12,6 @@ public class AirportsMapper extends Mapper<LongWritable, Text, Text, IntWritable
         if (key.get() > 0){
             String airport_id = line[0].replaceAll("\"", "");
             String airport_name = line[1].replaceAll("\"", "");
-            System.out.println(airport_name);
             context.write(
                     new FlightsWritableComparable(Integer.parseInt(airport_id), 0),
                     new Text(airport_name)
