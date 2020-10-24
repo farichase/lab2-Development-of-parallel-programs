@@ -7,8 +7,8 @@ import java.io.IOException;
 public class FlightsWritableComparable implements WritableComparable<FlightsWritableComparable> {
     private int airport_id;
     private int indicator;
-    public FlightsWritableComparable(int aeroport_id, int indicator){
-        this.airport_id = aeroport_id;
+    public FlightsWritableComparable(int airport_id, int indicator){
+        this.airport_id = airport_id;
         this.indicator = indicator;
     }
     public FlightsWritableComparable(){
@@ -43,9 +43,9 @@ public class FlightsWritableComparable implements WritableComparable<FlightsWrit
             return 1;
         else if (this.airport_id != item.airport_id)
             return -1;
-        if (this.indicator > item.getIndicator())
+        if (this.indicator > item.indicator)
             return 1;
-        else if (this.indicator != item.getIndicator())
+        else if (this.indicator != item.indicator)
             return -1;
         return 0;
     }
