@@ -16,7 +16,7 @@ public class FlightsMapper extends Mapper<LongWritable, Text, Text, IntWritable>
             if (line[AIRPORT_DELAY].trim().length() != 0) {
                 delay = Float.parseFloat(line[AIRPORT_DELAY]);
             }
-            if (delay > 0) {
+            if (delay > 0.f) {
                 int airport_id = Integer.parseInt(line[AIRPORT_ID]);
                 context.write(
                         new FlightsWritableComparable(airport_id, 1),
