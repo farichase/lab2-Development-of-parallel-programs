@@ -49,4 +49,11 @@ public class FlightsWritableComparable implements WritableComparable<FlightsWrit
             return -1;
         return 0;
     }
+    public int compareAirportId(FlightsWritableComparable item){
+        if (this.airport_id > item.airport_id)
+            return 1;
+        else if (this.airport_id != item.airport_id)
+            return -1;
+        return 0;
+    }
 }
