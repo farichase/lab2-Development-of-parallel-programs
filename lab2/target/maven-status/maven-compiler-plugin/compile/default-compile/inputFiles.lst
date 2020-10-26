@@ -1,0 +1,7 @@
+/home/farida/lab2-Development-of-parallel-programs/lab2/src/main/java/airports/FlightsMapper.java
+/home/farida/lab2-Development-of-parallel-programs/lab2/src/main/java/airports/AirportsPartitioner.java
+/home/farida/lab2-Development-of-parallel-programs/lab2/src/main/java/airports/AirportsMapper.java
+/home/farida/lab2-Development-of-parallel-programs/lab2/src/main/java/airports/AirportsReducer.java
+/home/farida/lab2-Development-of-parallel-programs/lab2/src/main/java/airports/AirportGroupingCorparator.java
+/home/farida/lab2-Development-of-parallel-programs/lab2/src/main/java/airports/FlightsWritableComparable.java
+/home/farida/lab2-Development-of-parallel-programs/lab2/src/main/java/airports/JoinApp.java
