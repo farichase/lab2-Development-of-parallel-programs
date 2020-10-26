@@ -1,4 +1,3 @@
-package src.main.java;
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.io.WritableComparator;
 
